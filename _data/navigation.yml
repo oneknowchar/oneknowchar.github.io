@@ -1,12 +1,24 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: "HOME"
+    url: https://oneknowchar.github.io/
+  - title: "Category"
+    url: /categories/
+
+docs:
+  - title: "📜 My History"
+    children:
+      - title: "PUBLISH"
+        url: /categories/#publish
+      - title: "JAVASCRIPT"
+        url: /categories/#javascript
+      - title: "JAVA"
+        url: /categories/#java
+      - title: "SPRING"
+        url: /categories/#spring
+      - title: "DATABASE"
+        url: /categories/#database
+      - title: "BOOK"
+        url: /categories/#book
+      - title: "BLOG"
+        url: /categories/#blog
