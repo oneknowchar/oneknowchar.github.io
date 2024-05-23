@@ -18,6 +18,8 @@ docs:
         url: /categories/#spring
       - title: "DATABASE"
         url: /categories/#database
+      - title: "GIT & GITHUB"
+        url: /categories/#git & github
       - title: "BOOK"
         url: /categories/#book
       - title: "BLOG"

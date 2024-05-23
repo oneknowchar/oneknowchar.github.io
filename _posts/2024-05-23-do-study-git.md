@@ -4,8 +4,8 @@ excerpt: "지옥에서 온 관리자, 깃"
 
 published: true 
 
-categories: blog
-tags: blog
+categories: git
+tags: git
 
 toc: true
 toc_sticky: true
@@ -27,19 +27,18 @@ sidebar:
 # Git 세팅
 ## Git 설치  
 [https://git-scm.com/downloads](https://git-scm.com/downloads)
-<center>  
 
-![](../images/2024-05-23/2024-05-23-14-18-10.png)  
+![](/images/2024-05-23/2024-05-23-14-18-10.png)  
+
 *사용자의 OS에 맞는 Git을 설치합니다.*  
 
-![](../images/2024-05-23/2024-05-23-14-20-29.png)  
+![](/images/2024-05-23/2024-05-23-14-20-29.png)  
 *Git Bash 설치 완료*  
 
-![](../images/2024-05-23/2024-05-23-14-06-47.png)  
+![](/images/2024-05-23/2024-05-23-14-06-47.png)  
 
 *windows OS 환경에서 Linux CLI를 사용할 수 있습니다.*  
 
-</center>
 
 # Git Command Line
 
@@ -55,7 +54,7 @@ $ git config --global user.name {사용자 이름 또는 깃허브 아이디}
 $ git config --global user.email {사용자 이메일 또는 깃허브 이메일}
 ```  
 
-![](../images/2024-05-23/2024-05-23-14-36-54.png)  
+![](/images/2024-05-23/2024-05-23-14-36-54.png)  
 
 *사용자의 이름과 이메일도 확인 할 수 있습니다.*
 
@@ -70,11 +69,11 @@ $ cd git-study
 
 $ git init
 ```
-![](../images/2024-05-23/2024-05-23-16-37-02.png)  
+![](/images/2024-05-23/2024-05-23-16-37-02.png)  
 
 *(master)라는 문구가 생겼습니다.*  
 
-![](../images/2024-05-23/2024-05-23-16-39-11.png)  
+![](/images/2024-05-23/2024-05-23-16-39-11.png)  
 
 *숨겨진 .git 폴더와 함께 자동으로 몇개의 파일들이 생성되었습니다.*  
 
@@ -88,7 +87,7 @@ $ git init
 
 
 ## git add && git status  
-![](../images/2024-05-23/2024-05-23-16-52-48.png)
+![](/images/2024-05-23/2024-05-23-16-52-48.png)
 
 새로 만든 git-study 폴더에,  test.txt 파일을 만들고
 test.txt 파일을 생성 후 "안녕하세요... " 문구를 추가했습니다.  
@@ -98,7 +97,7 @@ test.txt 파일을 생성 후 "안녕하세요... " 문구를 추가했습니다
 $ git status //깃 상태 조회 명령어
 $ git add {파일명}  //수정한 파일을 스테이지에 추가
 ```
-![](../images/2024-05-23/2024-05-23-16-54-22.png)  
+![](/images/2024-05-23/2024-05-23-16-54-22.png)  
 
 1. git status명령어로 .git 폴더와 git-study 폴더를 비교합니다.  
 2. stage 영역에 없고, 한 번도 버전 관리하지 않은 `Untracked`파일인 test.txt 파일이 발견되었습니다.
