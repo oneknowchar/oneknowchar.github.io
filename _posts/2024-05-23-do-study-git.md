@@ -123,8 +123,11 @@ $ git commit -m "save test file into my repository"
 
 한 번이라도 커밋한 내역이 있는 파일들은 매번 수정 후 git add할 필요 없이
 -am 옵션으로 스테이징후 커밋까지를 한꺼번에 처리할 수 있습니다.  
-다시 말해, 신규 파일은 항상 `git add`를 하고 커밋해야 한다는 뜻입니다.
-> 고민할것 없이 커밋을 하려면 git add > git commit -m "msg" 로 하면 됩니다.
+다시 말해, 신규 파일은 항상 `git add`를 하고 커밋해야 한다는 뜻입니다.  
+
+> 고민할것 없이 커밋을 하려면 git add > git commit -m "msg" 로 하면 됩니다.  
+
+
 ## git log  
 ```
 git log --stat 
