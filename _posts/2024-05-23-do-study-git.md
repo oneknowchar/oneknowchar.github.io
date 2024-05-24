@@ -1,11 +1,11 @@
 ---
-title:  "깃 시작하기"
-excerpt: "지옥에서 온 관리자, 깃"
+title:  "깃이란? 깃의 기본 명령어들"
+excerpt: "깃 설치부터 버전관리 그리고 버전 삭제까지 알아보겠습니다."
 
 published: true 
 
-categories: git
-tags: git
+categories: git & github
+tags: git & github
 
 toc: true
 toc_sticky: true
@@ -103,6 +103,102 @@ $ git add {파일명}  //수정한 파일을 스테이지에 추가
 2. stage 영역에 없고, 한 번도 버전 관리하지 않은 `Untracked`파일인 test.txt 파일이 발견되었습니다.
 3. git add test.txt 명령어로 test.txt 파일을 stage에 담았습니다.
 4. git status 깃 상태 조회를 하니 `new file : test.txt` 정상적으로 새로운 작업물이 stage에 담겼습니다.
-5. git add 시에 `warning` 문구는 다른 OS 간에 문자 개행시 발생하는 오류입니다. 어떠한 조치를 해야 하는 것은 아니니 무시하셔도 됩니다.
+5. git add 시에 `warning` 문구는 다른 OS 간에 문자 개행시 발생하는 오류입니다. 어떠한 조치를 해야 하는 것은 아니니 무시하셔도 됩니다.  
+
+## git commit
+### git commit -m
+git add를 했다면, 이제 버전별로 관리할 준비가 되었다는 뜻 입니다.  
 
 
+```
+// -m :커밋시 메시지를 남기는 옵션입니다.
+$ git commit -m "save test file into my repository"
+```
+
+![](/images/2024-05-24/2024-05-24-08-41-58.png)  
+
+*스테이지에 있던 1개의 test.txt 파일이 repository에 추가되었습니다.*
+
+### git commit -am  
+
+한 번이라도 커밋한 내역이 있는 파일들은 매번 수정 후 git add할 필요 없이
+-am 옵션으로 스테이징후 커밋까지를 한꺼번에 처리할 수 있습니다.  
+다시 말해, 신규 파일은 항상 `git add`를 하고 커밋해야 한다는 뜻입니다.
+> 고민할것 없이 커밋을 하려면 git add > git commit -m "msg" 로 하면 됩니다.
+## git log  
+```
+git log --stat 
+```
+![](/images/2024-05-24/2024-05-24-08-45-12.png)  
+해당 커밋의 고유 아이디와, 남긴 메시지를 확인할 수 있습니다.  
+`(head->master)`는 사용자의 호스트 저장소의 최종 커밋을 의미합니다.  
+나중에 나올 `(origin/master)`는 원격 저장소의 최종 커밋을 의미합니다.
+ 
+--stat 로그 상세 옵션입니다. 
+
+커밋시점에 변경된 파일명과 라인수 를 알수 있습니다.  
+![](/images/2024-05-24/2024-05-24-09-38-27.png)
+
+## git diff  
+```
+$ git diff
+```
+스테이지에 있는 수정된 파일과, 저장소에 있는 파일을 비교하여 다른점을 알려주는 명령어 입니다.
+
+## git checkout  
+작업 디렉토리를 변경하거나 브랜치 간 이동하는 등의 다양한 작업을 수행합니다.
+
+```
+$ git checkout <option>
+```
+Git 에서 가장 다양하고 유용한 명령어 입니다.
+```
+1. 브랜치간 이동  // git checkout {브랜치명}
+2. 커밋 간 이동   // git checkout {커밋명}
+3. 파일 복원      // git checkout -- {파일명}
+4. 새 브랜치 생성 // git checkout -b {새 브랜치명}
+```
+
+## git reset 
+```
+$ git reset -- {파일명}
+```
+
+## git reset HEAD^
+git reset은 커밋 내역을 취소하는 명령어 입니다.  
+default option 은 --mixed 입니다.
+HEAD^ 는 최신 버전의 커밋을 의미하며, ~n 는 최신 버전(1)로부터 n개를 의미합니다.  
+생략시 가장 최근의 커밋을 가리킵니다.  
+`**HEAD의 위치를 바꿔버리며  저장소의 가장 최신 시점이 됩니다.**`
+
+```
+// 시점 선택 방법
+$ git reset HEAD^      // git reset HEAD^~1 두 명령어는 기능적으로 동일 
+$ git reset HEAD^~2    // 최근 커밋 2개를 취소
+$ git reset            // HEAD^ 생략가능, 기본적으로 가장 최근의 커밋이 대상이 됨
+$ git reset {커밋해시}  // 특정 커밋 해시 시점으로 reset할 수 있습니다.
+
+// reset 옵션
+$ git reset --soft  // 커밋 삭제, 변경 내역 유지, stage 에 올라가 있음
+$ git reset --mixed // 커밋 삭제, 변경 내역 유지, stage 에 올라가 있지 않음.
+$ git reset --hard  // 커밋 삭제, 변경 내역 삭제, 즉 마지막 커밋 시점 전으로 완전 초기화
+```
+
+하지만, git reset은  `사용을 멀리`해야 하는 이유가 있습니다.  
+
+1.  커밋 히스토리가 변경되어 `혼란`을 야기할 수 있다.
+2.  작업 디렉토리를 조작할 수 있으므로 `중요한 데이터를 삭제`할 수 있다.
+3.  원격 저장소에 push한 경우, reset은 사용불가합니다. 로컬과 원격의 commit history가 달라져 충돌이 일어나며 commi이 불가능 합니다!!
+
+따라서 reset으로 이전 상태로 되돌리기 보다는, 상태를 보존하고 새로운 커밋을 추가하여 업데이트 하는 쪽이 더 좋은 대안 입니다.
+
+## git revert  
+커밋 내역을 삭제하지 않고 지우고자 하는 커밋의 변경 내역을 삭제하여 revert 커밋을 새로 만듭니다.  
+```
+$ git revert {커밋해시}   // 설정한 커밋해시의 변경 내역을 없애며 시점 이동, 커밋 내역을 남김
+$ git revert --no-commit {커밋해시}  // 설정한 커밋해시의 변경 내역을 없애며 시점 이동, 커밋 내역을 남기지 않음
+```
+----------
+
+
+여기까지  기본적인 깃의 기능들을 다뤄봤습니다.  
