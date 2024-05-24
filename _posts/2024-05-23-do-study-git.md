@@ -4,8 +4,8 @@ excerpt: "깃 설치부터 버전관리 그리고 버전 삭제까지 알아보�
 
 published: true 
 
-categories: git & github
-tags: git & github
+categories: git&github
+tags: git&github
 
 toc: true
 toc_sticky: true
