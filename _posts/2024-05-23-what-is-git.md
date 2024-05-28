@@ -146,23 +146,43 @@ git log --stat
 ```
 $ git diff
 ```
-스테이지에 있는 수정된 파일과, 저장소에 있는 파일을 비교하여 다른점을 알려주는 명령어 입니다.
+스테이지에 있는 수정된 파일과, 저장소에 있는 파일을 비교하여 다른점을 알려주는 명령어 입니다.  
+
+
+# 작업 되돌리기  
+작업 내용을 스테이징, 커밋 까지 했다면, 스테이징에서 내리거나 커밋을 취소할 수 도 있습니다.  
 
 ## git checkout  
-작업 디렉토리를 변경하거나 브랜치 간 이동하는 등의 다양한 작업을 수행합니다.
+> git checkout 의 기능이 너무 많기 때문에 `switch`나 `restore` 가 도입되었습니다.  
+[참고 블로그](https://blog.outsider.ne.kr/1505)  
+
+checkout: Switch branches or restore working tree files  
+switch: Switch branches  
+restore: Restore working tree files  
+
+실제 깃 bash를 사용하더라도   
+![](images/2024-05-28/2024-05-28-10-02-45.png)  
+*restore 하라는 명령어만 존재할 뿐입니다.*  
+
+>**더 이상 checkout 명령어를 직접적으로 사용할 필요가 없어졌습니다.**
+
+원래  checkout은  작업을 수행했습니다.  
+
+Git 에서 가장 다양하고 유용한 명령어 입니다. 그렇기 때문에 대신할 명령어가 도입 되었습니다.  
 
 ```
-$ git checkout <option>
-```
-Git 에서 가장 다양하고 유용한 명령어 입니다.
-```
-1. 브랜치간 이동  // git checkout {브랜치명}
-2. 커밋 간 이동   // git checkout {커밋명}
-3. 파일 복원      // git checkout -- {파일명}
-4. 새 브랜치 생성 // git checkout -b {새 브랜치명}
-```
+1. 브랜치간 이동  // git checkout {브랜치명} >> git switch {브랜치명}
+2. 커밋 간 이동   // git checkout {커밋명} (계속해서 checkout 사용)
+3. 파일 복원      // git checkout -- {파일명} >> git restore {파일명}
+4. 새 브랜치 생성 // git checkout -b {새 브랜치명} >> git branch {브랜치명}
+```  
+
+git checkout -- {파일명} 명령어로  
+
 
 ## git reset 
+깃에서 reset은 두 가지 용도,  스테이징 취소와 커밋 삭제를 할 수 있습니다.  
+
 ```
 $ git reset -- {파일명}
 ```
