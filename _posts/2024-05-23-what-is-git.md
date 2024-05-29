@@ -161,7 +161,7 @@ switch: Switch branches
 restore: Restore working tree files  
 
 실제 깃 bash를 사용하더라도   
-![](images/2024-05-28/2024-05-28-10-02-45.png)  
+![](/images/2024-05-28/2024-05-28-10-02-45.png)  
 *restore 하라는 명령어만 존재할 뿐입니다.*  
 
 >**더 이상 checkout 명령어를 직접적으로 사용할 필요가 없어졌습니다.**
