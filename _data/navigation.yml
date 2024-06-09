@@ -1,26 +1,28 @@
 # main links
 main:
-  - title: "HOME"
+  - title: 'HOME'
     url: https://oneknowchar.github.io/
-  - title: "Category"
+  - title: 'Category'
     url: /categories/
 
 docs:
-  - title: "📜 My History"
+  - title: '📜 My History'
     children:
-      - title: "PUBLISH"
+      - title: 'PUBLISH'
         url: /categories/#publish
-      - title: "JAVASCRIPT"
+      - title: 'JAVASCRIPT'
         url: /categories/#javascript
-      - title: "JAVA"
+      - title: 'JAVA'
         url: /categories/#java
-      - title: "SPRING"
+      - title: 'SPRING'
         url: /categories/#spring
-      - title: "DATABASE"
+      - title: 'JPA'
+        url: /categories/#jpa
+      - title: 'DATABASE'
         url: /categories/#database
-      - title: "GIT & GITHUB"
+      - title: 'GIT & GITHUB'
         url: /categories/#git&github
-      - title: "BOOK"
+      - title: 'BOOK'
         url: /categories/#book
-      - title: "BLOG"
+      - title: 'BLOG'
         url: /categories/#blog
