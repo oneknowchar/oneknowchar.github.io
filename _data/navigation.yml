@@ -8,18 +8,20 @@ main:
 docs:
   - title: '📜 My History'
     children:
-      - title: 'PUBLISH'
-        url: /categories/#publish
-      - title: 'JAVASCRIPT'
-        url: /categories/#javascript
       - title: 'JAVA'
         url: /categories/#java
       - title: 'SPRING'
         url: /categories/#spring
+      - title: 'ALGORITHM'
+        url: /categories/#algorithm
       - title: 'JPA'
         url: /categories/#jpa
       - title: 'DATABASE'
         url: /categories/#database
+      - title: 'PUBLISH'
+        url: /categories/#publish
+      - title: 'JAVASCRIPT'
+        url: /categories/#javascript
       - title: 'GIT & GITHUB'
         url: /categories/#git&github
       - title: 'BOOK'
