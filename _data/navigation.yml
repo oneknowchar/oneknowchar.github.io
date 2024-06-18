@@ -12,8 +12,6 @@ docs:
         url: /categories/#java
       - title: 'SPRING'
         url: /categories/#spring
-      - title: 'ALGORITHM'
-        url: /categories/#algorithm
       - title: 'JPA'
         url: /categories/#jpa
       - title: 'DATABASE'
@@ -22,6 +20,8 @@ docs:
         url: /categories/#publish
       - title: 'JAVASCRIPT'
         url: /categories/#javascript
+      - title: 'ALGORITHM'
+        url: /categories/#algorithm
       - title: 'GIT & GITHUB'
         url: /categories/#git&github
       - title: 'BOOK'
