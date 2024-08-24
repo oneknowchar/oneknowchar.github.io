@@ -8,6 +8,8 @@ main:
 docs:
   - title: '📜 My History'
     children:
+      - title: 'WEB'
+        url: /categories/#web
       - title: 'JAVA'
         url: /categories/#java
       - title: 'SPRING'
