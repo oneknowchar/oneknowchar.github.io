@@ -94,6 +94,16 @@ public ResponseEntity<FileDTO> getByteImg() throws IOException{
 
 ```
 
+# 스크립트에서 byte[]과 base64가 왜 같다고 나오는가?
+
+ResponseEntity의 body에 FileDTO와 같은 객체를 담아 반환할 때
+
+Jackson 라이브러리가 자동으로 직렬화(serialization) 과정을 수행합니다.
+
+Jackson은 자바 객체를 JSON으로 변환하는 라이브러리로, Spring Framework에서 RESTful API를 개발할 때 자주 사용됩니다.
+
+파일의 바이트 배열을 FileDTO에 포함시키는 경우, Jackson은 기본적으로 바이트 배열을 Base64로 인코딩하여 JSON으로 직렬화합니다. 이는 JSON 형식이 바이너리 데이터를 직접적으로 표현할 수 없기 때문입니다.
+
 ---
 
 여기까지 컨트롤러에서 이미지 파일을 호출, 브라우저에서 이미지 조회를 알아보았습니다.
