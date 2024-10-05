@@ -1,5 +1,5 @@
 ---
-title: '원격 저장소란?(remote repository)'
+title: '원격 저장소란? 그리고 자주쓰는 명령어들'
 excerpt: 'github remote repository를 활용하여 소스를 백업할 수 있습니다.'
 
 published: true
@@ -141,6 +141,24 @@ remote add 명령어는 `.git` 폴더가 존재하는 위치에서 사용할 수
 clone 명령어는 원격 저장소를 가져오면서 .git 폴더도 같이 생성합니다.
 
 ![](/images/2024-06-16/2024-06-16-19-50-10.png)
+
+# git 원격 저장소 주소 변경
+
+```
+git remote set-url origin https://github.com/oneknowchar/study-jpa.git
+```
+
+# git push 간편하게 브랜치명(main) 생략
+
+```
+git push --set-upstream origin main
+```
+
+# 로컬에서 커밋 취소하며 스테이징에 남기기
+
+```
+git reset --soft HEAD^
+```
 
 ---
 
